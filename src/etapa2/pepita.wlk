@@ -6,12 +6,12 @@ import comidas.*
 object pepita {
 	var energia = 0
 	method energia() { return energia }
-	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
+	method comer(cosa, gramos) {energia += cosa.energiaPorGramo() * gramos }
 	method volar(kms) { energia -= kms + 10 }
 	
 	// metodos nuevos
-	method estaDebil() { return true }  // implementar
-	method estaFeliz() { return true }  // implementar
+	method estaDebil() { return energia<50 }  // implementar
+	method estaFeliz() { return energia>500 and energia>1000 }  // implementar
 	
 	method cuantoQuiereVolar() { 
 		var cuanto = self.energia() / 5
@@ -19,6 +19,8 @@ object pepita {
 		if (energia % 20 == 0) { cuanto += 15 }
 		return cuanto
 	}
+	
+	
 	
 	method salirAComer() {
 		self.volar(5)		// "self" es una referencia al objeto que recibe el mensaje
