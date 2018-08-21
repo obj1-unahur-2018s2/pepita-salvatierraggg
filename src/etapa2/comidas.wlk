@@ -38,18 +38,58 @@ object mijo {
 	}
 }
 
+//opcion1
+//object canelones {
+//	var queso
+//	var salsa
+//	var total
+//	method soloQueso(){queso=true salsa=false total=20}
+//	method soloSalsa(){queso=false salsa=true total=20}
+//	method conAmbos(){queso=true salsa=true total=20}
+//	method conNada(){queso=false salsa=false total=20}
+//	method energiaPorGramo() { 
+//		if (queso){total+=7} 
+//		if (salsa){total+=5}
+//		return total
+//		
+//	}
+//}
+
+
+//opcion2
+//object canelones {
+//	
+//	var total
+//	
+//	method soloQueso(){total=27}
+//	method soloSalsa(){total=25}
+//	method conAmbos(){total=32}
+//	method conNada(){total=20}
+//	method energiaPorGramo() { 
+//		return total
+//		
+//	}
+//}
+
+
+
+//opcion3
 object canelones {
 	var queso
 	var salsa
-	var total
-	method soloQueso(){queso=true salsa=false total=20}
-	method soloSalsa(){queso=false salsa=true total=20}
-	method conAmbos(){queso=true salsa=true total=20}
-	method conNada(){queso=false salsa=false total=20}
+	
+	const base=20
+	const conSalsa=5
+    const conQueso=7
+	method ponerQueso(){queso=true}
+	method sacarQueso(){queso=false}
+	method ponerSalsa(){salsa=true }
+	method sacarSalsa(){salsa=false}
 	method energiaPorGramo() { 
-		if (queso){total+=7} 
-		if (salsa){total+=5}
-		return total
-		
+		return base 
+	+(if (queso){conQueso}else{0})
+    +(if(salsa){conSalsa}else{0})
+		  
+		}
 	}
-}
+
