@@ -1,13 +1,6 @@
 import comidas
 
 
-
-
-
-
-
-
-
 object pepon {
 	// aca falta un atributo
 	var energia=0
